@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/recycler_view_background"
+    android:layout_marginTop="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +20,9 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="Title"/>
+            android:text="Title"
+            android:textColor="@color/white"
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/bodyPost"
@@ -26,12 +30,15 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:text="Body"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
 
             <Button
                 android:id="@+id/delete"
@@ -39,14 +46,16 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="Delete"
-                android:background="@drawable/delete_update"/>
+                android:background="@drawable/delete_update"
+                android:layout_marginEnd="25dp"/>
             <Button
                 android:id="@+id/comments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:text="Comments"
-                android:background="@drawable/comments"/>
+                android:background="@drawable/comments"
+                android:layout_marginEnd="25dp"/>
             <Button
                 android:id="@+id/update"
                 android:layout_width="wrap_content"
