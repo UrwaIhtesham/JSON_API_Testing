@@ -8,6 +8,7 @@
     tools:context=".UpdateActivity"
     android:background="@color/background">
 
+    <!-- Linear Layout in the middle -->
     <LinearLayout
         android:id="@+id/updateLinearLayout"
         android:layout_width="match_parent"

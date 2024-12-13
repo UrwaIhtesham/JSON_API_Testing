@@ -1,12 +1,14 @@
 package com.example.l215404.assignment5.Models;
 
 public class Comment {
+    //attributes
     private int id;
     private int postId;
     private String name;
     private String email;
     private String body;
 
+    //constructor
     public Comment(int id, int postId, String name, String email, String body) {
         this.id = id;
         this.postId = postId;
@@ -15,6 +17,7 @@ public class Comment {
         this.body = body;
     }
 
+    //getters and setters of id
     public int getId() {
         return id;
     }
@@ -23,6 +26,7 @@ public class Comment {
         this.id = id;
     }
 
+    //getters and setters of post id
     public int getPostId() {
         return postId;
     }
@@ -31,6 +35,7 @@ public class Comment {
         this.postId = postId;
     }
 
+    //getters and setters of name
     public String getName() {
         return name;
     }
@@ -39,6 +44,7 @@ public class Comment {
         this.name = name;
     }
 
+    //getters and setters of email
     public String getEmail() {
         return email;
     }
@@ -47,6 +53,7 @@ public class Comment {
         this.email = email;
     }
 
+    //getters and setters of body
     public String getBody() {
         return body;
     }
