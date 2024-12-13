@@ -38,4 +38,10 @@ public class VolleyResponseHelper {
         JsonObjectRequest JSONrequest = new JsonObjectRequest(Request.Method.PUT, url, updatedPost, listener, errorListener);
         volleyRequestHelper.addToRequestQueue(JSONrequest);
     }
+
+    public  void getPostById(int postId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+        String url = "https://jsonplaceholder.typicode.com/posts/" + postId;
+        JsonObjectRequest JSONrequest = new JsonObjectRequest(Request.Method.GET, url, null, listener, errorListener);
+        volleyRequestHelper.addToRequestQueue(JSONrequest);
+    }
 }

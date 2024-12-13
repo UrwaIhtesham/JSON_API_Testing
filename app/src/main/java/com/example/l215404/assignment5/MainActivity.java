@@ -1,14 +1,14 @@
 package com.example.l215404.assignment5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -107,43 +107,22 @@ public class MainActivity extends AppCompatActivity implements PostAdapter.onPos
 
     @Override
     public void onUpdate(Post post) {
-        try {
-            JSONObject updatedPost = new JSONObject();
-            updatedPost.put("title", post.getTitle());
-            updatedPost.put("body", post.getBody());
-
-            volleyResponseHelper.updatePost(post.getId(), updatedPost, new Response.Listener<JSONObject>() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    Toast.makeText(MainActivity.this, "Post updated successfully", Toast.LENGTH_SHORT).show();
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    error.printStackTrace();
-                    Toast.makeText(MainActivity.this, "Failed to update post", Toast.LENGTH_SHORT).show();
-                }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(MainActivity.this, "Error creating post update", Toast.LENGTH_SHORT).show();
-        }
+        Log.d("MainActivity", "postId (MAIN): " + post.getId());
+        Log.d("MainActivity", "post Title (MAIN): " + post.getTitle());
+        Log.d("MainActivity", "post Body (MAIN): " + post.getBody());
+        Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
+        intent.putExtra("postId", post.getId());
+        intent.putExtra("title", post.getTitle());
+        intent.putExtra("body", post.getBody());
+        startActivity(intent);
     }
 
     @Override
     public void onShowComments(int postId) {
-        volleyResponseHelper.getComments(postId, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                Log.d("Comments", response.toString());
-                Toast.makeText(MainActivity.this, "Comments fetched", Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-                Toast.makeText(MainActivity.this, "Failed to fetch comments", Toast.LENGTH_SHORT).show();
-            }
-        });
+        Intent i = new Intent(MainActivity.this, CommentsActivity.class);
+        i.putExtra("postId", postId);
+        startActivity(i);
     }
+
+
 }

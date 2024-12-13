@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateActivity"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:id="@+id/updateLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <TextView
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Post"
+            android:textSize="35sp"
+            android:textColor="@color/comments"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title: "
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/TitlePostUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Title"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Body: "
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/BodyPostUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Body"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/updatePostButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            android:background="@drawable/comments"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
